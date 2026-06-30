@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="EnergyMonitor.SiteMaster" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sistema de Monitoreo y Cálculo de Consumo Eléctrico Residencial</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet" />
+    <style>
+        /* Estilos principales: fondo oscuro, color verde y amarillo de acento */
+        body { margin:0; font-family: 'Roboto', sans-serif; background:#121212; color:#fff; }
+        .layout { display:flex; min-height:100vh; }
+        .sidebar { width:260px; background:#0e0e0e; padding:20px; box-shadow:2px 0 8px rgba(0,0,0,0.6); }
+        .brand { font-size:18px; font-weight:700; color:#00C853; margin-bottom:20px; }
+        .nav a { display:block; color:#ccc; padding:10px; border-radius:8px; text-decoration:none; margin-bottom:6px; }
+        .nav a:hover { background:#111; color:#fff; }
+        .content { flex:1; padding:24px; }
+        .card { background:#1b1b1b; padding:18px; border-radius:12px; box-shadow:0 4px 14px rgba(0,0,0,0.5); margin-bottom:16px; }
+        .btn { background:#00C853; color:#000; padding:8px 12px; border-radius:8px; text-decoration:none; font-weight:600; }
+        .accent { color:#FFD600; }
+        /* Responsive */
+        @media(max-width:800px){ .sidebar{ display:none;} .layout{flex-direction:column;} }
+    </style>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+        <div class="layout">
+            <div class="sidebar">
+                <div class="brand">Sistema <span class="accent">Consumo</span></div>
+                <div class="nav">
+                    <a href="Dashboard.aspx">Dashboard</a>
+                    <a href="Dispositivos.aspx">Dispositivos</a>
+                    <a href="AgregarDispositivo.aspx">Agregar Dispositivo</a>
+                    <a href="Logout.aspx">Cerrar Sesión</a>
+                </div>
+            </div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
